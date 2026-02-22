@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Design Agency</title>
+</head>
+<body>
+
+<h1>Website Design Agency</h1>
+
+<button onclick="createOrder()">Test Order</button>
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "websitedesignagency-78afe.firebaseapp.com",
+    projectId: "websitedesignagency-78afe",
+    storageBucket: "websitedesignagency-78afe.firebasestorage.app",
+    messagingSenderId: "937369412374",
+    appId: "1:937369412374:web:a5b036cd9c3b7d9f586637"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  function createOrder() {
+    db.collection("orders").add({
+      client_id: "CLIENT123",
+      service_name: "Website Design Pro",
+      amount: 499,
+      payment_status: "pending",
+      order_status: "new",
+      created_at: new Date()
+    })
+    .then(() => {
+      alert("Order Created Successfully!");
+    })
+    .catch((error) => {
+      alert("Error: " + error);
+    });
+  }
+</script>
+
+</body>
+</html>
