@@ -1,66 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Website Design Agency</title>
+  <title>Website Design Agency - Admin Panel</title>
+  <meta charset="UTF-8" />
 </head>
-<body>
+<body style="font-family: Arial; padding: 40px;">
 
-<h1>Website Design Agency</h1>
+  <h1>Website Design Agency</h1>
+  <h2>Admin Test Panel</h2>
 
-<button onclick="createOrder()">Test Order</button>
+  <button onclick="createTestOrder()" style="padding:10px 20px; font-size:16px;">
+    Create Test Order
+  </button>
 
-<!-- Firebase CDN -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <p id="status"></p>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDoydVQgD1x-DyktrA5S5rWOdmhm9lsokk",
-  authDomain: "websitedesignagency-78afe.firebaseapp.com",
-  projectId: "websitedesignagency-78afe",
-  storageBucket: "websitedesignagency-78afe.firebasestorage.app",
-  messagingSenderId: "937369412374",
-  appId: "1:937369412374:web:a5b036cd9c3b7d9f586637",
-  measurementId: "G-WV4QMDQT22"
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);",
-    authDomain: "websitedesignagency-78afe.firebaseapp.com",
-    projectId: "websitedesignagency-78afe",
-    storageBucket: "websitedesignagency-78afe.firebasestorage.app",
-    messagingSenderId: "937369412374",
-    appId: "1:937369412374:web:a5b036cd9c3b7d9f586637"
-  };
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+    const firebaseConfig = {
+      apiKey: "AIzaSyDoydVQgD1x-DyktrA5S5rWOdmhm9lsokk",
+      authDomain: "websitedesignagency-78afe.firebaseapp.com",
+      projectId: "websitedesignagency-78afe",
+      storageBucket: "websitedesignagency-78afe.firebasestorage.app",
+      messagingSenderId: "937369412374",
+      appId: "1:937369412374:web:a5b036cd9c3b7d9f586637",
+      measurementId: "G-WV4QMDQT22"
+    };
 
-  function createOrder() {
-    db.collection("orders").add({
-      client_id: "CLIENT123",
-      service_name: "Website Design Pro",
-      amount: 499,
-      payment_status: "pending",
-      order_status: "new",
-      created_at: new Date()
-    })
-    .then(() => {
-      alert("Order Created Successfully!");
-    })
-    .catch((error) => {
-      alert("Error: " + error);
-    });
-  }
-</script>
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window.createTestOrder = async function () {
+      try {
+        await addDoc(collection(db, "orders"), {
+          client_id: "TEST123",
+          service_name: "Website Design",
+          amount: 5000,
+          payment_status: "Pending",
+          order_status: "New",
+          created_at: Timestamp.now()
+        });
+
+        document.getElementById("status").innerHTML = "✅ Test Order Successfully Added!";
+      } catch (error) {
+        document.getElementById("status").innerHTML = "❌ Error: " + error.message;
+      }
+    };
+  </script>
 
 </body>
 </html>
