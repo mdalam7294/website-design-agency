@@ -160,5 +160,67 @@ window.buy = async function(service, link){
 };
 
 </script>
+  <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+
+// 🔐 Your Firebase Config
+const firebaseConfig = {
+  apiKey: "AIzaSyDoydVQgD1x-DyktrA5S5rWOdmhm9lsokk",
+  authDomain: "websitedesignagency-78afe.firebaseapp.com",
+  projectId: "websitedesignagency-78afe",
+  storageBucket: "websitedesignagency-78afe.firebasestorage.app",
+  messagingSenderId: "937369412374",
+  appId: "1:937369412374:web:a5b036cd9c3b7d9f586637"
+};
+
+// 🚀 Initialize
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+// ===============================
+// ✅ ORDER SAVE FUNCTION
+// ===============================
+window.createOrder = async function(serviceName, amount) {
+  try {
+    await addDoc(collection(db, "orders"), {
+      service_name: serviceName,
+      amount: amount,
+      status: "Pending",
+      created_at: new Date()
+    });
+    alert("Order Submitted Successfully!");
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
+};
+
+// ===============================
+// 🔐 ADMIN LOGIN FUNCTION
+// ===============================
+window.adminLogin = async function(email, password) {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Admin Login Successful");
+    window.location.href = "dashboard.html";
+  } catch (error) {
+    alert("Login Failed: " + error.message);
+  }
+};
+
+// ===============================
+// 📊 FETCH ORDERS (Admin)
+// ===============================
+window.loadOrders = async function() {
+  const querySnapshot = await getDocs(collection(db, "orders"));
+  querySnapshot.forEach((doc) => {
+    console.log(doc.id, " => ", doc.data());
+  });
+};
+
+</script>
 </body>
 </html>
