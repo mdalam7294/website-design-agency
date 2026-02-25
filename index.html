@@ -3,43 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Design Agency - Global Services</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Website Design Agency</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#f4f4f4;
+  text-align:center;
+}
+h1{
+  margin-top:40px;
+}
+input,select{
+  padding:10px;
+  margin:10px;
+  width:250px;
+}
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.card{
+  background:white;
+  padding:20px;
+  margin:20px;
+  width:280px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+button{
+  padding:10px 20px;
+  background:#0070ba;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Website Design Agency</h1>
 
-<select id="currencySelector">
-  <option value="USD">USD</option>
-  <option value="INR">INR</option>
-  <option value="EUR">EUR</option>
-  <option value="GBP">GBP</option>
-  <option value="CAD">CAD</option>
-  <option value="AUD">AUD</option>
+<input type="text" id="name" placeholder="Your Name">
+<input type="email" id="email" placeholder="Your Email">
+
+<select id="currency">
+<option value="USD">USD</option>
+<option value="INR">INR</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="AUD">AUD</option>
+<option value="CAD">CAD</option>
 </select>
 
-<div class="service">
-  <h2>Starter Website</h2>
-  <p id="starterPrice"></p>
-  <button onclick="buyStarter()">Buy Now</button>
-</div>
+<div class="container" id="plans"></div>
 
 <script type="module">
 
-import { convertPrice } from "./js/currency.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const usdPrice = 499;
+const firebaseConfig = {
+  apiKey: "AIzaSyDoydVQgD1x-DyktrA5S5rWOdmhm9lsokk",
+  authDomain: "websitedesignagency-78afe.firebaseapp.com",
+  projectId: "websitedesignagency-78afe",
+  storageBucket: "websitedesignagency-78afe.appspot.com",
+  messagingSenderId: "937369412374",
+  appId: "1:937369412374:web:a5b036cd9c3b7d9f586637"
+};
 
-document.getElementById("starterPrice").innerText =
-  convertPrice(usdPrice);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-window.buyStarter = function() {
-  window.location.href =
-  "https://www.paypal.com/ncp/payment/JB3NMGMFWE76W";
+const rates = {USD:1, INR:83, EUR:0.92, GBP:0.78, AUD:1.5, CAD:1.35};
+
+const plans = [
+
+{ name:"Starter Website", price:499, link:"https://www.paypal.com/ncp/payment/JB3NMGMFWE76W" },
+
+{ name:"Business Website", price:999, link:"https://www.paypal.com/ncp/payment/UHDEAJU6HZD6Y" },
+
+{ name:"Pro Website", price:1499, link:"https://www.paypal.com/ncp/payment/YEGBMGH5Y32V8" },
+
+{ name:"Landing Page", price:399, link:"https://www.paypal.com/ncp/payment/SE573FSDAWKA4" },
+
+{ name:"SEO Monthly", price:299, link:"https://www.paypal.com/ncp/payment/VQZATQ8LE3LRL" },
+
+{ name:"AI Chatbot", price:499, link:"https://www.paypal.com/ncp/payment/7PTB2MGL263YN" },
+
+{ name:"Maintenance Monthly", price:199, link:"https://www.paypal.com/ncp/payment/P3E8TCM48MA4J" },
+
+{ name:"Google Ads Management", price:499, link:"https://www.paypal.com/ncp/payment/QSGZAHKQEGGDL" },
+
+{ name:"Social Media Management", price:399, link:"https://www.paypal.com/ncp/payment/W47T6ELNGTZA2" },
+
+{ name:"Email Marketing Automation", price:349, link:"https://www.paypal.com/ncp/payment/985W67LK4X9YE" },
+
+{ name:"CRM Setup & Automation", price:699, link:"https://www.paypal.com/ncp/payment/7LTGSBV4AUTKU" },
+
+{ name:"Growth Package", price:1999, link:"https://www.paypal.com/ncp/payment/CPQ7QABSUVTEN" },
+
+{ name:"Complete Business Automation", price:2999, link:"https://www.paypal.com/ncp/payment/LU4TBVQQ2UL9G" },
+
+{ name:"International Expansion Package", price:3999, link:"https://www.paypal.com/ncp/payment/LQBZJ7BWBUFGE" },
+
+{ name:"Full Digital Growth System", price:4999, link:"https://www.paypal.com/ncp/payment/QCBQCUYBY6WUG" }
+
+];
+
+const container = document.getElementById("plans");
+const currencySelect = document.getElementById("currency");
+
+function renderPlans(){
+  container.innerHTML="";
+  const cur = currencySelect.value;
+
+  plans.forEach(plan=>{
+    const price = (plan.price * rates[cur]).toFixed(2);
+
+    const div = document.createElement("div");
+    div.className="card";
+    div.innerHTML=`
+      <h3>${plan.name}</h3>
+      <p>${cur} ${price}</p>
+      <button onclick="buy('${plan.name}','${plan.link}')">Buy Now</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+currencySelect.addEventListener("change", renderPlans);
+renderPlans();
+
+window.buy = async function(service, link){
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  if(!name || !email){
+    alert("Please fill details");
+    return;
+  }
+
+  await addDoc(collection(db,"orders"),{
+    name:name,
+    email:email,
+    service:service,
+    status:"Pending",
+    created:serverTimestamp()
+  });
+
+  window.location.href = link;
 };
 
 </script>
-
 </body>
 </html>
