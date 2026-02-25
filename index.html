@@ -1,54 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Website Design Agency - Admin Panel</title>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Design Agency - Global Services</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body style="font-family: Arial; padding: 40px;">
+<body>
 
-  <h1>Website Design Agency</h1>
-  <h2>Admin Test Panel</h2>
+<h1>Website Design Agency</h1>
 
-  <button onclick="createTestOrder()" style="padding:10px 20px; font-size:16px;">
-    Create Test Order
-  </button>
+<select id="currencySelector">
+  <option value="USD">USD</option>
+  <option value="INR">INR</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+  <option value="CAD">CAD</option>
+  <option value="AUD">AUD</option>
+</select>
 
-  <p id="status"></p>
+<div class="service">
+  <h2>Starter Website</h2>
+  <p id="starterPrice"></p>
+  <button onclick="buyStarter()">Buy Now</button>
+</div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+<script type="module">
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDoydVQgD1x-DyktrA5S5rWOdmhm9lsokk",
-      authDomain: "websitedesignagency-78afe.firebaseapp.com",
-      projectId: "websitedesignagency-78afe",
-      storageBucket: "websitedesignagency-78afe.firebasestorage.app",
-      messagingSenderId: "937369412374",
-      appId: "1:937369412374:web:a5b036cd9c3b7d9f586637",
-      measurementId: "G-WV4QMDQT22"
-    };
+import { convertPrice } from "./js/currency.js";
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+const usdPrice = 499;
 
-    window.createTestOrder = async function () {
-      try {
-        await addDoc(collection(db, "orders"), {
-          client_id: "TEST123",
-          service_name: "Website Design",
-          amount: 5000,
-          payment_status: "Pending",
-          order_status: "New",
-          created_at: Timestamp.now()
-        });
+document.getElementById("starterPrice").innerText =
+  convertPrice(usdPrice);
 
-        document.getElementById("status").innerHTML = "✅ Test Order Successfully Added!";
-      } catch (error) {
-        document.getElementById("status").innerHTML = "❌ Error: " + error.message;
-      }
-    };
-  </script>
+window.buyStarter = function() {
+  window.location.href =
+  "https://www.paypal.com/ncp/payment/JB3NMGMFWE76W";
+};
+
+</script>
 
 </body>
 </html>
