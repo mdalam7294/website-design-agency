@@ -1,89 +1,137 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
 body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f6f9;
-color:#333;
-text-align:center;
-}
-
-header{
-background:#0f172a;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
-padding:40px 20px;
 }
 
-header h1{
-margin:0;
-font-size:32px;
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.8;
+margin-bottom:20px;
 }
 
 .currency-switch button{
-margin:10px;
-padding:10px 20px;
+padding:8px 18px;
 border:none;
-border-radius:5px;
+border-radius:20px;
+margin:5px;
 cursor:pointer;
-background:#2563eb;
-color:white;
+font-weight:600;
 }
 
-#services{
+.plans{
+padding:40px 20px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-padding:40px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
 }
 
-.plan{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:30px;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+transition:0.4s;
+position:relative;
 }
 
-.plan:hover{
-transform:translateY(-5px);
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.6);
 }
 
-.plan h2{
-margin-top:0;
-font-size:20px;
+.badge{
+position:absolute;
+top:-10px;
+right:-10px;
+background:#ff9800;
+color:black;
+padding:6px 15px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
 }
 
 .price{
-font-size:24px;
+font-size:28px;
+color:#00ffcc;
 margin:15px 0;
-font-weight:bold;
-color:#2563eb;
+font-weight:700;
 }
 
-.buy{
-display:block;
-width:100%;
-margin:8px 0;
-padding:12px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-background:#111827;
-color:white;
+.features{
+list-style:none;
+margin:15px 0;
+opacity:0.9;
 font-size:14px;
 }
 
-.buy:hover{
-background:#2563eb;
+.features li{
+margin:6px 0;
 }
 
-footer{
-background:#0f172a;
+.btn{
+display:block;
+margin:8px 0;
+padding:12px;
+border-radius:30px;
+text-align:center;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.paypal{
+background:linear-gradient(45deg,#0070ba,#003087);
 color:white;
-padding:20px;
-margin-top:40px;
 }
 
-@media(max-width:600px){
-header h1{
-font-size:24px;
+.razor{
+background:linear-gradient(45deg,#528ff0,#2c60ff);
+color:white;
 }
+
+.btn:hover{
+transform:scale(1.05);
+opacity:0.9;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+@media(max-width:768px){
+.hero h1{font-size:28px;}
 }
