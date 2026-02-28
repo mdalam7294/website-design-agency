@@ -1,116 +1,164 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Website Design Agency</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-</head>
+let currency = "USD";
 
-<body>
+const services = [
 
-<header>
-<h1>Website Design Agency</h1>
-<p>Professional Website Development | Serving 190+ Countries</p>
+{
+name:"Starter Plan",
+priceINR:4999,
+priceUSD:99,
+paypal:"https://www.paypal.com/ncp/payment/JB3NMGMFWE76W",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<select id="currency" onchange="convertCurrency()">
-<option value="INR">India (INR ₹)</option>
-<option value="USD">USA (USD $)</option>
-<option value="EUR">Europe (EUR €)</option>
-<option value="GBP">UK (GBP £)</option>
-<option value="AUD">Australia (AUD $)</option>
-<option value="CAD">Canada (CAD $)</option>
-<option value="AED">UAE (AED)</option>
-<option value="SGD">Singapore (SGD)</option>
-</select>
+{
+name:"Business Plan",
+priceINR:9999,
+priceUSD:199,
+paypal:"https://www.paypal.com/ncp/payment/UHDEAJU6HZD6Y",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-</header>
+{
+name:"Pro Plan",
+priceINR:19999,
+priceUSD:399,
+paypal:"https://www.paypal.com/ncp/payment/YEGBMGH5Y32V8",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<section class="plans">
+{
+name:"Landing Page Design",
+priceINR:3999,
+priceUSD:79,
+paypal:"https://www.paypal.com/ncp/payment/SE573FSDAWKA4",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<div class="card">
-<h2>Starter Plan</h2>
-<p class="price" data-price="4999">₹4,999</p>
-<a href="https://rzp.io/rzp/NWf1FweI" target="_blank">
-<button>Buy Now</button>
-</a>
-</div>
+{
+name:"SEO Monthly Service",
+priceINR:7499,
+priceUSD:149,
+paypal:"https://www.paypal.com/ncp/payment/VQZATQ8LE3LRL",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<div class="card">
-<h2>Business Plan</h2>
-<p class="price" data-price="9999">₹9,999</p>
-<a href="https://rzp.io/rzp/36kU4D6z" target="_blank">
-<button>Buy Now</button>
-</a>
-</div>
+{
+name:"AI Chatbot Setup",
+priceINR:9999,
+priceUSD:199,
+paypal:"https://www.paypal.com/ncp/payment/7PTB2MGL263YN",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<div class="card">
-<h2>Pro Plan</h2>
-<p class="price" data-price="19999">₹19,999</p>
-<a href="https://rzp.io/rzp/ZKRzCsh" target="_blank">
-<button>Buy Now</button>
-</a>
-</div>
+{
+name:"Website Maintenance",
+priceINR:2999,
+priceUSD:59,
+paypal:"https://www.paypal.com/ncp/payment/P3E8TCM48MA4J",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-</section>
+{
+name:"Google Ads Management",
+priceINR:14999,
+priceUSD:299,
+paypal:"https://www.paypal.com/ncp/payment/QSGZAHKQEGGDL",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<section>
-<h2>All Services</h2>
-<ul>
-<li>Landing Page Design</li>
-<li>SEO Monthly Plan</li>
-<li>Google Ads Management</li>
-<li>Social Media Management</li>
-<li>AI Chatbot Setup</li>
-<li>CRM Setup & Automation</li>
-<li>Email Marketing</li>
-<li>Website Maintenance</li>
-<li>Complete Business Automation</li>
-<li>International Expansion Package</li>
-<li>Full Digital Growth Package</li>
-</ul>
-</section>
+{
+name:"Social Media Management",
+priceINR:12499,
+priceUSD:249,
+paypal:"https://www.paypal.com/ncp/payment/W47T6ELNGTZA2",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<section>
-<h2>Contact Us</h2>
-<p>Email: websitedesignagency1@gmail.com</p>
-<a href="https://wa.me/916299901015" target="_blank">
-<button>Chat on WhatsApp</button>
-</a>
-</section>
+{
+name:"Email Automation System",
+priceINR:9999,
+priceUSD:199,
+paypal:"https://www.paypal.com/ncp/payment/985W67LK4X9YE",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<footer>
-<p>© 2026 Website Design Agency | All Countries | All Currencies Supported</p>
-</footer>
+{
+name:"CRM Setup",
+priceINR:14999,
+priceUSD:299,
+paypal:"https://www.paypal.com/ncp/payment/7LTGSBV4AUTKU",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-<script>
-function convertCurrency(){
-let currency = document.getElementById("currency").value;
-let prices = document.querySelectorAll(".price");
+{
+name:"Growth Package",
+priceINR:24999,
+priceUSD:499,
+paypal:"https://www.paypal.com/ncp/payment/CPQ7QABSUVTEN",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-let rates = {
-USD: 0.012,
-EUR: 0.011,
-GBP: 0.0095,
-AUD: 0.018,
-CAD: 0.016,
-AED: 0.044,
-SGD: 0.016,
-INR: 1
-};
+{
+name:"Complete Automation System",
+priceINR:39999,
+priceUSD:799,
+paypal:"https://www.paypal.com/ncp/payment/LU4TBVQQ2UL9G",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-prices.forEach(function(item){
-let base = item.getAttribute("data-price");
-let converted = (base * rates[currency]).toFixed(2);
+{
+name:"International Expansion Package",
+priceINR:49999,
+priceUSD:999,
+paypal:"https://www.paypal.com/ncp/payment/LQBZJ7BWBUFGE",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
+},
 
-if(currency=="INR"){
-item.innerHTML = "₹" + base;
+{
+name:"Full Digital Growth System",
+priceINR:74999,
+priceUSD:1499,
+paypal:"https://www.paypal.com/ncp/payment/QCBQCUYBY6WUG",
+razorpay:"https://rzp.io/rzp/2AWrbFr"
 }
-else{
-item.innerHTML = currency + " " + converted;
-}
+
+];
+
+const container = document.getElementById("services");
+
+function render(){
+container.innerHTML="";
+
+services.forEach(service=>{
+
+let price = currency==="INR" ? service.priceINR : service.priceUSD;
+let symbol = currency==="INR" ? "₹" : "$";
+
+container.innerHTML += `
+<div class="plan">
+<h2>${service.name}</h2>
+<div class="price">${symbol}${price}</div>
+
+<button class="buy" onclick="pay('${service.paypal}')">
+Pay with PayPal
+</button>
+
+<button class="buy" onclick="pay('${service.razorpay}')">
+Pay with Razorpay
+</button>
+
+</div>`;
 });
-}
-</script>
 
-</body>
-</html>
+}
+
+function setCurrency(cur){
+currency=cur;
+render();
+}
+
+function pay(link){
+window.open(link,"_blank");
+}
+
+render();
