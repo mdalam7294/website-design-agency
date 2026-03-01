@@ -1,57 +1,90 @@
-body {
-  font-family: Arial;
-  margin: 0;
-  padding: 0;
-  background: #f4f6f9;
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
 }
 
-header {
-  text-align: center;
-  padding: 30px;
-  background: #111;
-  color: white;
+.hero{
+text-align:center;
+padding:100px 20px;
 }
 
-.toggle-buttons button {
-  margin: 5px;
-  padding: 8px 15px;
-  cursor: pointer;
+.hero h1{
+font-size:48px;
+font-weight:700;
 }
 
-.services {
-  padding: 30px;
+.btn-main, .btn-whatsapp{
+padding:12px 25px;
+margin:10px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-weight:600;
+display:inline-block;
+transition:0.3s;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.btn-main{
+background:#ff6b6b;
 }
 
-.price {
-  font-size: 20px;
-  font-weight: bold;
+.btn-whatsapp{
+background:#25D366;
 }
 
-.pay {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+.btn-main:hover, .btn-whatsapp:hover{
+transform:scale(1.1);
 }
 
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: green;
-  color: white;
-  padding: 15px;
-  border-radius: 50px;
-  text-decoration: none;
+.services{
+padding:60px 20px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.btn{
+display:block;
+margin:10px 0;
+padding:10px;
+border-radius:20px;
+text-decoration:none;
+color:white;
+background:#ff6b6b;
+}
+
+.paypal{
+background:#0070ba;
+}
+
+.order{
+background:#00c9a7;
+border:none;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111;
 }
