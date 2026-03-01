@@ -4,31 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Website Design Agency | AI Automation & Digital Growth</title>
-<meta name="description" content="Professional Website Design, AI Automation, SEO, Digital Marketing & Business Growth Services Worldwide.">
+<meta name="description" content="Professional Website Development, SEO, AI Automation & Digital Marketing Services Worldwide">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<script type="module" src="firebase.js"></script>
+</head>
 <body>
 
-<section class="hero">
-  <h1>Website Design Agency</h1>
-  <p>AI Automation • Web Development • Digital Growth</p>
-  <div class="currency-switch">
-    <button onclick="setCurrency('USD')">USD</button>
-    <button onclick="setCurrency('INR')">INR</button>
-  </div>
-</section>
+<header class="hero">
+<h1>Website Design Agency</h1>
+<p>AI Automation • Web Development • Digital Marketing Worldwide</p>
 
-<section class="plans">
-  <div id="services"></div>
-</section>
+<div class="top-controls">
+<button onclick="setCurrency('INR')">₹ India</button>
+<button onclick="setCurrency('USD')">$ International</button>
+<button onclick="toggleTheme()">🌙 Toggle Mode</button>
+</div>
+</header>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/916299901015?text=Hello%20I%20am%20interested%20in%20your%20services" 
-class="whatsapp" target="_blank">💬</a>
+<section id="services"></section>
 
-<script src="script.js"></script>
+<div id="successMessage" class="success"></div>
+
+<a href="https://wa.me/916299901015" class="whatsapp" target="_blank">💬 Chat Now</a>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
