@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Success</title>
+<title>Payment Successful</title>
 </head>
 <body>
 
-<h2>Thank You For Your Order!</h2>
-<p>We will contact you soon.</p>
+<h2>Payment Successful 🎉</h2>
+<p>Your service is being activated...</p>
 
-<a href="index.html">Back to Home</a>
+<script type="module">
+import { db } from "./firebase.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const name = urlParams.get("name");
+const email = urlParams.get("email");
+const service = urlParams.get("service");
+
+await addDoc(collection(db, "orders"), {
+  name: name,
+  email: email,
+  service: service,
+  status: "Activated",
+  date: new Date()
+});
+
+alert("Service Activated Successfully!");
+</script>
 
 </body>
 </html>
