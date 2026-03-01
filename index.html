@@ -1,207 +1,213 @@
-<!-- ONLY SERVICES SECTION + FOOTER REPLACEMENT -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Design Agency | Muhammad Alam</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<section id="services">
-<h2>All Services & Pricing (USD)</h2>
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
 
-<div class="grid">
+header{
+text-align:center;
+padding:50px 20px;
+}
+
+h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:30px;
+max-width:1300px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.price{
+font-size:20px;
+margin:15px 0;
+font-weight:600;
+}
+
+.btn{
+display:inline-block;
+padding:10px 16px;
+margin:5px 5px 0 0;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+}
+
+.razor{
+background:#00c853;
+color:white;
+}
+
+.paypal{
+background:#ffc107;
+color:black;
+}
+
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+opacity:0.9;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Website Design Agency</h1>
+<p>Serving Worldwide 🌍 | USA • UK • Canada • Australia • Europe • Middle East • Asia</p>
+</header>
+
+<section class="services">
 
 <!-- WEBSITE SERVICES -->
 
-<div class="card">
-<h3>Starter Website (5 Pages)</h3>
-<div class="price">$149</div>
-<a href="https://rzp.io/rzp/bVUwg3u" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/399BKMSLFCR5Y" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Starter Website</h3>
+<a href="https://rzp.io/rzp/bVUwg3u" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/399BKMSLFCR5Y" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Business Website (10 Pages)</h3>
-<div class="price">$299</div>
-<a href="https://rzp.io/rzp/NHR78mSE" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/PZ5MV2CUT3JSE" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Business Website</h3>
+<a href="https://rzp.io/rzp/NHR78mSE" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/PZ5MV2CUT3JSE" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Ecommerce Website</h3>
-<div class="price">$699</div>
-<a href="https://rzp.io/rzp/s08AJkA" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/825YT5MRRYJGE" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Pro Website</h3>
+<a href="https://rzp.io/rzp/mJGE9GwH" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/B8CMBZXDLRZJW" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Landing Page High Converting</h3>
-<div class="price">$129</div>
-<a href="https://rzp.io/rzp/xuEHXpZ" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/6Z2AFGUNLZ3H2" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Ecommerce Website</h3>
+<a href="https://rzp.io/rzp/s08AJkA" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/825YT5MRRYJGE" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Portfolio Website</h3>
-<div class="price">$199</div>
-<a href="https://rzp.io/rzp/lEsy9Eh" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/8ABMDC7UJALGC" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Landing Page</h3>
+<a href="https://rzp.io/rzp/K7jaByC" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/6Z2AFGUNLZ3H2" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Website Redesign</h3>
-<div class="price">$249</div>
-<a href="#" class="btn" target="_blank">Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/B8CMBZXDLRZJW" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Landing Page High Converting</h3>
+<a href="https://rzp.io/rzp/xuEHXpZ" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/6Z2AFGUNLZ3H2" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Speed Optimization</h3>
-<div class="price">$99</div>
-<a href="https://rzp.io/rzp/1SX23k9" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/5BBA58F2X4HV2" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Portfolio Website</h3>
+<a href="https://rzp.io/rzp/lEsy9Eh" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/8ABMDC7UJALGC" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Website Maintenance (Monthly)</h3>
-<div class="price">$79</div>
-<a href="https://rzp.io/rzp/DZThK0EO" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/WSPKZ3TNHULJY" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Speed Optimization</h3>
+<a href="https://rzp.io/rzp/1SX23k9" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/5BBA58F2X4HV2" class="btn paypal">PayPal</a></div>
 
-<!-- DIGITAL MARKETING -->
+<div class="card"><h3>Website Maintenance (Monthly)</h3>
+<a href="https://rzp.io/rzp/DZThK0EO" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/WSPKZ3TNHULJY" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>SEO Monthly Basic</h3>
-<div class="price">$199</div>
-<a href="https://rzp.io/rzp/RKfzK2X1" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/KQ4FGV6RCTPX2" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<!-- MARKETING -->
 
-<div class="card">
-<h3>SEO Advanced</h3>
-<div class="price">$349</div>
-<a href="https://rzp.io/rzp/iDRdq08" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/UTT89E9PU4JBN" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>SEO Monthly Basic</h3>
+<a href="https://rzp.io/rzp/RKfzK2X1" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/KQ4FGV6RCTPX2" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Google Ads Management</h3>
-<div class="price">$249</div>
-<a href="https://rzp.io/rzp/EYEWJAHH" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/N4Y2L564FDP5C" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>SEO Advanced</h3>
+<a href="https://rzp.io/rzp/iDRdq08" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/UTT89E9PU4JBN" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Facebook / Instagram Ads</h3>
-<div class="price">$229</div>
-<a href="https://rzp.io/rzp/tb6cbeo5" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/CXDZ6W8LKXFEY" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Google Ads Management</h3>
+<a href="https://rzp.io/rzp/EYEWJAHH" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/N4Y2L564FDP5C" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Social Media Management</h3>
-<div class="price">$299</div>
-<a href="https://rzp.io/rzp/2CGqGoA" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/6RYW44K9JCGKG" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Facebook / Instagram Ads</h3>
+<a href="https://rzp.io/rzp/tb6cbeo5" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/CXDZ6W8LKXFEY" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Email Marketing Setup</h3>
-<div class="price">$179</div>
-<a href="https://rzp.io/rzp/OQov7i9" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/WS2JH85HGH6LN" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Social Media Management</h3>
+<a href="https://rzp.io/rzp/2CGqGoA" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/6RYW44K9JCGKG" class="btn paypal">PayPal</a></div>
 
-<!-- AI SERVICES -->
+<div class="card"><h3>Email Marketing Automation</h3>
+<a href="https://rzp.io/rzp/OQov7i9" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/WS2JH85HGH6LN" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>AI Chatbot Website</h3>
-<div class="price">$179</div>
-<a href="https://rzp.io/rzp/9Dv28qrh" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/HCWQ8MKE74HZW" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<!-- AUTOMATION -->
 
-<div class="card">
-<h3>WhatsApp Automation System</h3>
-<div class="price">$299</div>
-<a href="https://rzp.io/rzp/qjYS1fF" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/SWBFKZPEFKMRG" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>AI Chatbot Setup</h3>
+<a href="https://rzp.io/rzp/9Dv28qrh" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/HCWQ8MKE74HZW" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>CRM Setup</h3>
-<div class="price">$249</div>
-<a href="https://rzp.io/rzp/0MzVMLuS" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/C2WB4J6C2PLXC" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>WhatsApp Automation System</h3>
+<a href="https://rzp.io/rzp/qjYS1fF" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/SWBFKZPEFKMRG" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Lead Generation System</h3>
-<div class="price">$399</div>
-<a href="https://rzp.io/rzp/qgIdDCN" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/2YZK259QT8NSW" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>CRM Setup & Automation</h3>
+<a href="https://rzp.io/rzp/0MzVMLuS" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/C2WB4J6C2PLXC" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Sales Funnel Setup</h3>
-<div class="price">$349</div>
-<a href="https://rzp.io/rzp/EsZoQhdc" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/UJ95LLG3EKE5Q" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Lead Generation System</h3>
+<a href="https://rzp.io/rzp/qgIdDCN" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/2YZK259QT8NSW" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Complete Automation Package</h3>
-<div class="price">$999</div>
-<a href="https://rzp.io/rzp/kjRMFGg" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/4WT5M5T7UY7MC" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>Sales Funnel Setup</h3>
+<a href="https://rzp.io/rzp/EsZoQhdc" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/UJ95LLG3EKE5Q" class="btn paypal">PayPal</a></div>
 
-<!-- PREMIUM -->
+<div class="card"><h3>Complete Automation Package</h3>
+<a href="https://rzp.io/rzp/kjRMFGg" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/4WT5M5T7UY7MC" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>Full Digital Growth System</h3>
-<div class="price">$1499</div>
-<a href="#" class="btn">Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/R3PJBK9P89QMY" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>International Business Setup</h3>
+<a href="https://rzp.io/rzp/2GJ6vAm" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/NASDWWCJ7RL8N" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>International Business Setup</h3>
-<div class="price">$1299</div>
-<a href="https://rzp.io/rzp/2GJ6vAm" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/NASDWWCJ7RL8N" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
+<div class="card"><h3>AI Business Automation Suite</h3>
+<a href="https://rzp.io/rzp/KFfFcHI" class="btn razor">Razorpay</a>
+<a href="https://www.paypal.com/ncp/payment/CBYNN66JYQYAG" class="btn paypal">PayPal</a></div>
 
-<div class="card">
-<h3>AI Business Automation Suite</h3>
-<div class="price">$1999</div>
-<a href="https://rzp.io/rzp/KFfFcHI" class="btn" target="_blank">Pay with Razorpay</a>
-<a href="https://www.paypal.com/ncp/payment/CBYNN66JYQYAG" class="btn paypal" target="_blank">Pay with PayPal</a>
-</div>
-
-</div>
 </section>
 
 <footer>
-<p>© 2026 Website Design Agency | Muhammad Alam</p>
-<p>Serving Worldwide 🌍 | USA • UK • Canada • Australia • Europe • Middle East • Asia</p>
+© 2026 Website Design Agency | Muhammad Alam
 </footer>
-```
 
----
+<a href="https://wa.me/916299901015" class="whatsapp">Chat on WhatsApp</a>
 
-# ✅ Ab Kya Karein?
-
-1. GitHub open karein  
-2. index.html edit karein  
-3. Old services section delete karein  
-4. Ye naya section paste karein  
-5. Save karein  
-
-Done ✅
-
----
-
-Ab:
-
-✔ Har service me payment button hai  
-✔ Razorpay + PayPal properly attached  
-✔ Worldwide added  
-✔ Design unchanged  
-
-Agar ab bhi koi missing lage to boliye — main next level premium SaaS style bana dunga 🚀
+</body>
+</html>
