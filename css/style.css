@@ -1,97 +1,57 @@
-:root{
---bg:#0f2027;
---card:#ffffff15;
---text:#fff;
---accent:#00ffcc;
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f9;
 }
 
-.light{
---bg:#f5f5f5;
---card:#ffffff;
---text:#000;
---accent:#0077ff;
+header {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  color: white;
 }
 
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,var(--bg),#203a43,#2c5364);
-color:var(--text);
-transition:0.4s;
+.toggle-buttons button {
+  margin: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
 }
 
-.hero{
-text-align:center;
-padding:70px 20px;
-animation:fadeIn 1.2s ease-in-out;
+.services {
+  padding: 30px;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(-20px);}
-to{opacity:1; transform:translateY(0);}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.top-controls button{
-margin:8px;
-padding:10px 20px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-font-weight:600;
-background:#fff;
+.price {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-#services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-padding:40px;
+.pay {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-.card{
-background:var(--card);
-padding:25px;
-border-radius:20px;
-backdrop-filter:blur(15px);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.price{
-font-size:22px;
-color:var(--accent);
-font-weight:700;
-margin:15px 0;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-color:#fff;
-background:linear-gradient(45deg,#ff512f,#dd2476);
-}
-
-.success{
-text-align:center;
-font-weight:600;
-color:lime;
-margin-bottom:20px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:#fff;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
 }
