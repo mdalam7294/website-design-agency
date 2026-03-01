@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel - Website Design Agency</title>
-<link rel="stylesheet" href="style.css">
-<script type="module" src="firebase.js"></script>
+<title>Admin Dashboard</title>
 </head>
 <body>
 
-<div class="admin-login" id="loginBox">
-<h2>Admin Login</h2>
-<input type="email" id="adminEmail" placeholder="Enter Email">
-<input type="password" id="adminPass" placeholder="Enter Password">
-<button onclick="adminLogin()">Login</button>
-</div>
-
-<div id="dashboard" style="display:none;">
-<h2>Orders Dashboard</h2>
+<h2>Live Orders</h2>
 <div id="orders"></div>
-</div>
 
-<script type="module" src="admin.js"></script>
+<script type="module">
+import { db } from "./firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const querySnapshot = await getDocs(collection(db,"orders"));
+
+querySnapshot.forEach((doc) => {
+  document.getElementById("orders").innerHTML += `
+    <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+      <h3>${doc.data().service}</h3>
+      <p>Email: ${doc.data().email}</p>
+      <p>Status: ${doc.data().status}</p>
+    </div>
+  `;
+});
+</script>
+
 </body>
 </html>
